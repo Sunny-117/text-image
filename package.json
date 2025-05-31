@@ -2,8 +2,8 @@
   "name": "ai-code-formatter-plugin",
   "version": "0.0.1-alpha.8",
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.cjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "publishConfig": {
     "access": "public"
@@ -16,6 +16,7 @@
     "build:website": "vite build",
     "test": "vitest",
     "build": "tsdown --config tsdown.config.ts",
+    "build:dev": "tsdown --config tsdown.config.ts --watch",
     "prepublishOnly": "concurrently \"pnpm run build\" \"pnpm run test\"",
     "release": "bumpp && npm publish"
   },

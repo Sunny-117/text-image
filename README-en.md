@@ -92,7 +92,11 @@ if (container) {
 plugin.update('New content ```js\nconsole.log("Updated");\n```');
 
 // Unmount
-plugin.unmount();
+
+setTimeout(() => {
+  plugin.unmount();
+}, 5000);
+
 ```
 
 ### Use Cases

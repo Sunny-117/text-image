@@ -1,0 +1,215 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+  --card-bg: rgba(25, 25, 35, 0.8);
+  --code-bg: #1e1e2e;
+  --header-bg: rgba(0, 0, 0, 0.3);
+  --text-color: #f0f0f0;
+  --secondary-text: #ddd;
+  --accent-color: #64d8ff;
+  --button-bg: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--primary-gradient);
+  color: var(--text-color);
+  min-height: 100vh;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 0;
+  background: var(--header-bg);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-header p {
+  font-size: 1.2rem;
+  color: var(--secondary-text);
+  max-width: 600px;
+  margin: 10px auto 0;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.demo-section, .sdk-section {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.stream-button {
+  background: var(--button-bg);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+}
+
+.stream-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 117, 252, 0.6);
+}
+
+.stream-button:disabled {
+  background: linear-gradient(135deg, #555, #777);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.demo-output, .sdk-demo {
+  background: rgba(15, 15, 25, 0.9);
+  border-radius: 10px;
+  padding: 25px;
+  min-height: 300px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.formatted-content {
+  white-space: pre-wrap;
+}
+
+.text-block {
+  margin-bottom: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+}
+
+.code-container {
+  margin: 25px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.code-header {
+  background: #2d2d3a;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.code-language {
+  color: #e2e2e2;
+  font-weight: bold;
+}
+
+.copy-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #a0a0ff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.code-pre {
+  margin: 0;
+  padding: 20px;
+  background: var(--code-bg);
+  overflow-x: auto;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.sdk-section h2 {
+  margin-top: 0;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.app-footer {
+  margin-top: 50px;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.feature-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card h3 {
+  margin: 0 0 15px;
+  color: var(--accent-color);
+}
+
+.feature-card p {
+  margin: 0;
+  color: #ccc;
+}
+
+.footer-note {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}

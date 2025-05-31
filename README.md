@@ -92,7 +92,10 @@ if (container) {
 plugin.update('新内容```js\nconsole.log("Updated");\n```');
 
 // 卸载
-plugin.unmount();
+
+setTimeout(() => {
+  plugin.unmount();
+}, 5000);
 ```
 
 ### 使用案例
