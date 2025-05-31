@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { detectCodeBlocks } from "./codeDetector";
 import { Highlight } from "./highlighter";
 
@@ -16,6 +16,7 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({
   theme = "monokai-sublime",
 }) => {
   const blocks = detectCodeBlocks(content);
+  const [isCopied, setIsCopied] = useState(false);
 
   return (
     <div className="formatted-content">
@@ -27,9 +28,14 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({
                 <span className="code-language">{block.language}</span>
                 <button
                   className="copy-button"
-                  onClick={() => navigator.clipboard.writeText(block.content)}
+                  onClick={() => {
+                    navigator.clipboard.writeText(block.content);
+                    setIsCopied(true);
+                    // 2秒后恢复"复制"状态
+                    setTimeout(() => setIsCopied(false), 2000);
+                  }}
                 >
-                  复制
+                  {isCopied ? "✓" : "复制"}
                 </button>
               </div>
               <Highlight language={block.language!} theme={theme}>
