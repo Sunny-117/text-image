@@ -15,7 +15,6 @@ jobs:
       - name: Install and Build
         run: |
           npm install -g pnpm
-          cd docs
           pnpm install
           pnpm build:website
 
