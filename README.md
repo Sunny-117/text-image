@@ -113,6 +113,9 @@ function AIChatMessage({ response }) {
 ```
 
 2. **技术文档展示**
+
+please see the [demo](https://github.com/Sunny-117/code-formatter-plugin/blob/main/playground/src/DocumentationPage.tsx).
+
 ```jsx
 import { createCodeFormatterPlugin } from 'ai-code-formatter-plugin';
 
