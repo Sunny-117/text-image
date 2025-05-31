@@ -1,7 +1,8 @@
 import type { CodeBlock } from './types';
+import hljs from 'highlight.js';
 
 /**
- * 检测文本中的代码块
+ * 检测文本中的代码块，并自动识别代码语言（支持 markdown 代码块语法和自动高亮）
  * @param text 输入文本
  * @returns 检测到的代码块数组
  */
@@ -35,9 +36,12 @@ export const detectCodeBlocks = (text: string): CodeBlock[] => {
     // 没有结束标记，将剩余内容视为代码
     if (endIdx === -1) {
       const codeContent = text.slice(startIdx + 3);
+      // 自动检测语言
+      const auto = hljs.highlightAuto(codeContent);
+      const detectedLang = auto.language || 'unknown';
       blocks.push({
         type: 'code',
-        language: 'unknown',
+        language: detectedLang,
         content: codeContent
       });
       break;
@@ -45,10 +49,14 @@ export const detectCodeBlocks = (text: string): CodeBlock[] => {
 
     // 提取语言和代码内容
     const headerLine = text.slice(startIdx + 3, endIdx).split('\n')[0].trim();
-    const language = headerLine || 'unknown';
+    let language = headerLine;
     const codeStartIndex = startIdx + 3 + headerLine.length;
     const codeContent = text.slice(codeStartIndex, endIdx).trim();
-
+    if (!language) {
+      // 自动检测语言
+      const auto = hljs.highlightAuto(codeContent);
+      language = auto.language || 'unknown';
+    }
     blocks.push({
       type: 'code',
       language,
