@@ -7,6 +7,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
+    "build:website": "vite build",
     "test": "vitest",
     "build": "tsdown --config tsdown.config.ts"
   },
