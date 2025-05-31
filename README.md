@@ -23,6 +23,7 @@ yarn add ai-code-formatter-plugin
 ### 基本使用
 ```jsx
 import { CodeFormatter } from 'ai-code-formatter-plugin';
+import 'ai-code-formatter-plugin/dist/style.css'
 
 function App() {
   const content = `

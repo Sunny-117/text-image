@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
+import "./styles.css";
 
 interface HighlightProps {
   language: string;
