@@ -1,6 +1,6 @@
 import { createRoot, type Root } from "react-dom/client";
 import { CodeFormatter } from "./codeFormatter";
-import type { CodeFormatterPluginOptions } from "../types";
+import type { CodeFormatterPluginOptions } from "./types";
 
 /**
  * 代码格式化插件SDK

@@ -1,5 +1,9 @@
 import { detectCodeBlocks } from '../src/core/codeDetector';
-
+import {
+  describe,
+  expect,
+  test,
+} from 'vitest'
 describe('detectCodeBlocks', () => {
   test('检测纯文本', () => {
     const text = '这是一段没有代码的纯文本';

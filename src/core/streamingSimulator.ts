@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import type { StreamingSimulatorConfig } from '../types';
+import type { StreamingSimulatorConfig } from './types';
 
 /**
  * 流式数据模拟钩子

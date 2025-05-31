@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { CodeFormatter } from "../core/codeFormatter";
 import { useStreamingSimulator } from "../core/streamingSimulator";
 import { CodeFormatterPlugin } from "../core/plugin";
-import type { StreamingSimulatorConfig } from "../types";
+import type { StreamingSimulatorConfig } from "../core/types";
 
 const DemoApp: React.FC = () => {
   // 流式数据配置

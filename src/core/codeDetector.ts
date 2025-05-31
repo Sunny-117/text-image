@@ -1,4 +1,4 @@
-import type { CodeBlock } from '../types';
+import type { CodeBlock } from './types';
 
 /**
  * 检测文本中的代码块
