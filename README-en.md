@@ -8,6 +8,8 @@ English|[简体中文](./README.md)
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
+<img src="/assets/image.png"/>
+
 ### Introduction
 The AI Code Formatter Plugin is a powerful React component library designed for AI Q&A scenarios. It intelligently identifies and renders streamed code content, providing a complete solution including code block detection, syntax highlighting, streaming data simulation, and plugin integration capabilities.
 
