@@ -1,3 +1,4 @@
+npm run build:website
 cd dist
 git init
 git add .
