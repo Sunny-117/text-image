@@ -8,7 +8,7 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![许可证][license-src]][license-href]
 
-<img src="./assets/show.gif" width="100%"/>
+![image](./assets/show.gif)
 
 ### 介绍
 AI 代码格式化插件是一个强大的React组件库，专为AI问答场景设计，能够智能识别和渲染流式返回的代码内容。它提供了一套完整的解决方案，包括代码块检测、语法高亮、流式数据模拟和插件化集成能力。
