@@ -28,7 +28,9 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({ content }) => {
                   复制
                 </button>
               </div>
-              <Highlight language={block.language!}>{block.content}</Highlight>
+              <Highlight language={block.language!} theme="monokai-sublime">
+                {block.content}
+              </Highlight>
             </div>
           );
         }

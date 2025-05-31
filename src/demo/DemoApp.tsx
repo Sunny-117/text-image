@@ -3,6 +3,9 @@ import { CodeFormatter } from "../core/codeFormatter";
 import { useStreamingSimulator } from "../core/streamingSimulator";
 import { CodeFormatterPlugin } from "../core/plugin";
 import type { StreamingSimulatorConfig } from "../core/types";
+import HighlightDemo from "./HighlightDemo";
+import { Highlight } from "../core/highlighter";
+import { demoAppSource } from "./demoAppSource";
 
 const DemoApp: React.FC = () => {
   // 流式数据配置
@@ -57,7 +60,7 @@ const DemoApp: React.FC = () => {
 
     return () => {
       if (pluginRef.current) {
-        pluginRef.current.unmount();
+        // pluginRef.current.unmount();
       }
     };
   }, []);
@@ -84,12 +87,21 @@ const DemoApp: React.FC = () => {
           <div className="demo-output">
             <CodeFormatter content={content} />
           </div>
+
+          <div style={{ marginTop: 32 }}>
+            <h3>DemoApp 代码高亮预览</h3>
+            <Highlight language="tsx" theme="github">
+              {demoAppSource}
+            </Highlight>
+          </div>
         </section>
 
         <section className="sdk-section">
           <h2>插件 SDK 演示</h2>
           <div ref={sdkDemoRef} className="sdk-demo"></div>
         </section>
+
+        <HighlightDemo />
       </main>
 
       <footer className="app-footer">
@@ -108,7 +120,7 @@ const DemoApp: React.FC = () => {
           </div>
         </div>
         <p className="footer-note">
-          AI代码格式化渲染器 © 2023 | TypeScript实现
+          AI代码格式化渲染器 © 2025 | TypeScript实现
         </p>
       </footer>
     </div>
