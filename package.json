@@ -1,13 +1,11 @@
 {
-  "name": "vite-project",
+  "name": "code-detector",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
+    "build": "vite build",
     "test": "vitest"
   },
   "dependencies": {
