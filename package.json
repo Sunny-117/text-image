@@ -1,6 +1,6 @@
 {
   "name": "ai-code-formatter-plugin",
-  "version": "0.0.1-alpha.6",
+  "version": "0.0.1-alpha.7",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.cjs",
@@ -16,7 +16,7 @@
     "build:website": "vite build",
     "test": "vitest",
     "build": "tsdown --config tsdown.config.ts",
-    "prepublish": "concurrently \"pnpm run build\" \"pnpm run test\"",
+    "prepublishOnly": "concurrently \"pnpm run build\" \"pnpm run test\"",
     "release": "bumpp && npm publish"
   },
   "peerDependencies": {
