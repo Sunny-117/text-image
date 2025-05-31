@@ -1,11 +1,28 @@
-/* index.css */
+:root {
+  --primary-gradient: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+  --card-bg: rgba(25, 25, 35, 0.8);
+  --code-bg: #1e1e2e;
+  --header-bg: rgba(0, 0, 0, 0.3);
+  --text-color: #f0f0f0;
+  --secondary-text: #ddd;
+  --accent-color: #64d8ff;
+  --button-bg: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
-  color: #f0f0f0;
+  background: var(--primary-gradient);
+  color: var(--text-color);
   min-height: 100vh;
   line-height: 1.6;
+  padding: 20px;
 }
 
 .app-container {
@@ -18,7 +35,7 @@ body {
   text-align: center;
   margin-bottom: 40px;
   padding: 30px 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--header-bg);
   border-radius: 15px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
@@ -33,7 +50,7 @@ body {
 
 .app-header p {
   font-size: 1.2rem;
-  color: #ddd;
+  color: var(--secondary-text);
   max-width: 600px;
   margin: 10px auto 0;
 }
@@ -44,8 +61,8 @@ body {
   gap: 40px;
 }
 
-.demo-section {
-  background: rgba(25, 25, 35, 0.8);
+.demo-section, .sdk-section {
+  background: var(--card-bg);
   border-radius: 15px;
   padding: 25px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -58,7 +75,7 @@ body {
 }
 
 .stream-button {
-  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  background: var(--button-bg);
   color: white;
   border: none;
   padding: 12px 30px;
@@ -81,7 +98,7 @@ body {
   box-shadow: none;
 }
 
-.demo-output {
+.demo-output, .sdk-demo {
   background: rgba(15, 15, 25, 0.9);
   border-radius: 10px;
   padding: 25px;
@@ -141,37 +158,17 @@ body {
 .code-pre {
   margin: 0;
   padding: 20px;
-  background: #1e1e2e;
+  background: var(--code-bg);
   overflow-x: auto;
   font-family: 'Fira Code', 'Consolas', monospace;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
-.code-block {
-  display: block;
-  color: #f8f8f2;
-}
-
-.sdk-section {
-  background: rgba(25, 25, 35, 0.8);
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
 .sdk-section h2 {
   margin-top: 0;
-  color: #64d8ff;
-}
-
-.sdk-demo {
-  background: rgba(15, 15, 25, 0.9);
-  border-radius: 10px;
-  padding: 20px;
-  min-height: 150px;
-  font-size: 1.1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--accent-color);
+  margin-bottom: 15px;
 }
 
 .app-footer {
@@ -201,14 +198,9 @@ body {
   transform: translateY(-10px);
 }
 
-.feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
 .feature-card h3 {
   margin: 0 0 15px;
-  color: #64d8ff;
+  color: var(--accent-color);
 }
 
 .feature-card p {
@@ -220,37 +212,4 @@ body {
   color: #aaa;
   font-size: 0.9rem;
   margin-top: 20px;
-}
-
-/* 代码语法高亮模拟 */
-.language-jsx, .language-javascript {
-  color: #f8f8f2;
-}
-.language-jsx .keyword, .language-javascript .keyword {
-  color: #ff79c6;
-}
-.language-jsx .function, .language-javascript .function {
-  color: #66d9ef;
-}
-.language-jsx .string, .language-javascript .string {
-  color: #f1fa8c;
-}
-.language-jsx .comment, .language-javascript .comment {
-  color: #6272a4;
-}
-
-.language-python {
-  color: #f8f8f2;
-}
-.language-python .keyword {
-  color: #ff79c6;
-}
-.language-python .function {
-  color: #50fa7b;
-}
-.language-python .string {
-  color: #f1fa8c;
-}
-.language-python .comment {
-  color: #6272a4;
 }
