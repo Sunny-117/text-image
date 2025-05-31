@@ -1,6 +1,12 @@
 # Code Formatter Plugin
 
-## README
+简体中文|[English](./README-en.md)
+
+[![npm 版本][npm-version-src]][npm-version-href]
+[![npm 下载量][npm-downloads-src]][npm-downloads-href]
+[![包大小][bundle-src]][bundle-href]
+[![JSDocs][jsdocs-src]][jsdocs-href]
+[![许可证][license-src]][license-href]
 
 ### 介绍
 AI 代码格式化插件是一个强大的React组件库，专为AI问答场景设计，能够智能识别和渲染流式返回的代码内容。它提供了一套完整的解决方案，包括代码块检测、语法高亮、流式数据模拟和插件化集成能力。
@@ -205,3 +211,18 @@ class CodeFormatterPlugin {
 2. **可扩展设计**：支持集成Prism.js等第三方高亮库
 3. **主题支持**：提供深色/浅色主题选项
 4. **复制功能**：每个代码块内置一键复制按钮
+
+
+
+<!-- 徽章 -->
+
+[npm-version-src]: https://img.shields.io/npm/v/ai-code-formatter-plugin?style=flat&colorA=080f12&colorB=1fa669
+[npm-version-href]: https://npmjs.com/package/ai-code-formatter-plugin
+[npm-downloads-src]: https://img.shields.io/npm/dm/ai-code-formatter-plugin?style=flat&colorA=080f12&colorB=1fa669
+[npm-downloads-href]: https://npmjs.com/package/ai-code-formatter-plugin
+[bundle-src]: https://img.shields.io/bundlephobia/minzip/ai-code-formatter-plugin?style=flat&colorA=080f12&colorB=1fa669&label=minzip
+[bundle-href]: https://bundlephobia.com/result?p=ai-code-formatter-plugin
+[license-src]: https://img.shields.io/github/license/Sunny-117/ai-code-formatter-plugin.svg?style=flat&colorA=080f12&colorB=1fa669
+[license-href]: https://github.com/Sunny-117/ai-code-formatter-plugin/blob/main/LICENSE
+[jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
+[jsdocs-href]: https://www.jsdocs.io/package/ai-code-formatter-plugin

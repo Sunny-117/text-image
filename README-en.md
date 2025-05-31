@@ -1,6 +1,12 @@
 # AI Code Formatter Plugin
 
-## README
+English|[简体中文](./README.md)
+
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![bundle][bundle-src]][bundle-href]
+[![JSDocs][jsdocs-src]][jsdocs-href]
+[![License][license-src]][license-href]
 
 ### Introduction
 The AI Code Formatter Plugin is a powerful React component library designed for AI Q&A scenarios. It intelligently identifies and renders streamed code content, providing a complete solution including code block detection, syntax highlighting, streaming data simulation, and plugin integration capabilities.
@@ -280,3 +286,17 @@ CodeFormatter.registerLanguage('my-lang', {
 
 ### Conclusion
 The AI Code Formatter Plugin provides a comprehensive solution for rendering code in AI-generated content. Its modular architecture, streaming capabilities, and plugin system make it suitable for various applications from chatbots to documentation platforms. The TypeScript implementation ensures type safety and maintainability while the detailed documentation facilitates easy integration.
+
+
+<!-- brage -->
+
+[npm-version-src]: https://img.shields.io/npm/v/ai-code-formatter-plugin?style=flat&colorA=080f12&colorB=1fa669
+[npm-version-href]: https://npmjs.com/package/ai-code-formatter-plugin
+[npm-downloads-src]: https://img.shields.io/npm/dm/ai-code-formatter-plugin?style=flat&colorA=080f12&colorB=1fa669
+[npm-downloads-href]: https://npmjs.com/package/ai-code-formatter-plugin
+[bundle-src]: https://img.shields.io/bundlephobia/minzip/ai-code-formatter-plugin?style=flat&colorA=080f12&colorB=1fa669&label=minzip
+[bundle-href]: https://bundlephobia.com/result?p=ai-code-formatter-plugin
+[license-src]: https://img.shields.io/github/license/Sunny-117/ai-code-formatter-plugin.svg?style=flat&colorA=080f12&colorB=1fa669
+[license-href]: https://github.com/Sunny-117/ai-code-formatter-plugin/blob/main/LICENSE
+[jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
+[jsdocs-href]: https://www.jsdocs.io/package/ai-code-formatter-plugin
