@@ -85,7 +85,7 @@ const DemoApp: React.FC = () => {
           </div>
 
           <div className="demo-output">
-            <CodeFormatter content={content} />
+            <CodeFormatter content={content} theme="github" />
           </div>
 
           <div style={{ marginTop: 32 }}>

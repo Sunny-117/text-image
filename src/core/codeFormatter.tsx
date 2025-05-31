@@ -4,13 +4,17 @@ import { Highlight } from "./highlighter";
 
 interface CodeFormatterProps {
   content: string;
+  theme?: import("./highlighter").Theme;
 }
 
 /**
  * 代码格式化组件
  * @param content 要格式化的文本内容
  */
-export const CodeFormatter: React.FC<CodeFormatterProps> = ({ content }) => {
+export const CodeFormatter: React.FC<CodeFormatterProps> = ({
+  content,
+  theme = "monokai-sublime",
+}) => {
   const blocks = detectCodeBlocks(content);
 
   return (
@@ -28,7 +32,7 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({ content }) => {
                   复制
                 </button>
               </div>
-              <Highlight language={block.language!} theme="monokai-sublime">
+              <Highlight language={block.language!} theme={theme}>
                 {block.content}
               </Highlight>
             </div>
