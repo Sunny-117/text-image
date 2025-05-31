@@ -15,10 +15,16 @@ jobs:
       - name: Install and Build
         run: |
           npm install -g pnpm
+          cd docs
           pnpm install
           pnpm build:website
-          echo "vitepress build completed successfully."
 
       - name: Deploy
         run: |
-          sh ./deploy.sh
+          cd dist
+          git init
+          git add -A
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m 'deploy'
+          git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:gh-pages
