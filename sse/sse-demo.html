@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE 演示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            height: 300px;
+            overflow-y: auto;
+        }
+        button {
+            padding: 8px 16px;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>SSE (Server-Sent Events) 演示</h1>
+    <div class="container">
+        <h2>连接控制</h2>
+        <button id="connect">连接</button>
+        <button id="disconnect" disabled>断开连接</button>
+
+        <h2>消息输出</h2>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const connectBtn = document.getElementById('connect');
+        const disconnectBtn = document.getElementById('disconnect');
+        const outputDiv = document.getElementById('output');
+        let eventSource = null;
+
+        // 连接SSE服务器
+        connectBtn.addEventListener('click', () => {
+            if (eventSource) {
+                eventSource.close();
+            }
+
+            // 连接到SSE服务器
+            eventSource = new EventSource('http://localhost:3000/sse');
+
+            // 连接成功
+            eventSource.onopen = () => {
+                console.log('SSE连接已建立');
+                appendMessage('SSE连接已建立');
+                connectBtn.disabled = true;
+                disconnectBtn.disabled = false;
+            };
+
+            // 接收消息
+            eventSource.onmessage = (event) => {
+                console.log('收到消息:', event.data);
+                appendMessage(`收到消息: ${event.data}`);
+            };
+
+            // 处理错误
+            eventSource.onerror = (error) => {
+                console.error('SSE错误:', error);
+                appendMessage('SSE连接错误');
+                connectBtn.disabled = false;
+                disconnectBtn.disabled = true;
+            };
+        });
+
+        // 断开SSE连接
+        disconnectBtn.addEventListener('click', () => {
+            if (eventSource) {
+                eventSource.close();
+                eventSource = null;
+                console.log('SSE连接已断开');
+                appendMessage('SSE连接已断开');
+                connectBtn.disabled = false;
+                disconnectBtn.disabled = true;
+            }
+        });
+
+        // 添加消息到输出区域
+        function appendMessage(message) {
+            const msgElement = document.createElement('div');
+            msgElement.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            outputDiv.appendChild(msgElement);
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>
