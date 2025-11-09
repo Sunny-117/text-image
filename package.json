@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "dev": "vite",
+    "dev:playground": "cd playground && pnpm run dev",
     "build:website": "vite build",
     "test": "vitest",
     "build": "tsdown --config tsdown.config.ts",
