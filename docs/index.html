@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="demo1"></canvas>
+    <canvas id="demo2"></canvas>
+    <canvas id="demo3"></canvas>
+    <script src="./dist/text-image.iife.js"></script>
+    <script>
+        textImage.createTextImage({
+            canvas: document.getElementById('demo1'),
+            replaceText: '123',
+            source: {
+                text: '科技与狠活',
+            },
+        });
+        textImage.createTextImage({
+            canvas: document.getElementById('demo2'),
+            raduis: 7,
+            isGray: true,
+            source: {
+                img: './assets/1.png',
+            },
+        });
+        textImage.createTextImage({
+            canvas: document.getElementById('demo3'),
+            raduis: 8,
+            isGray: true,
+            source: {
+                img: './assets/1.mp4',
+                height: 700,
+            },
+        });
+    </script>
+</body>
+
+</html>

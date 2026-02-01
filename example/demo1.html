@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="demo"></canvas>
+  <script src="../dist/text-image.iife.js"></script>
+  <script>
+    textImage.createTextImage({
+      canvas: document.getElementById('demo'),
+      replaceText: '123',
+      source: {
+        text: '科技与狠活',
+      },
+    });
+  </script>
+</body>
+
+</html>
