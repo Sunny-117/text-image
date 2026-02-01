@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sunny-117/text-image": "link:..",
+    "@sunny-117/text-image": "workspace:*",
     "vue": "^3.4.21"
   },
   "devDependencies": {

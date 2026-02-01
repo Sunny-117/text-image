@@ -5,7 +5,7 @@
 <script setup>
 import { createTextImage } from "@sunny-117/text-image";
 import { onMounted } from "vue";
-
+import img from './assets/vue.svg'
 onMounted(() => {
   const canvas = document.querySelector("#canvas2");
   console.log(canvas)
@@ -14,7 +14,7 @@ onMounted(() => {
     raduis: 7,
     isGray: true,
     source: {
-      img: "./assets/1.png",
+      img,
       width: 800,
       height: 700,
     },
