@@ -52,11 +52,46 @@ import { useStreamingSimulator, CodeFormatter } from 'ai-code-formatter-plugin';
 function StreamingDemo() {
   const streamConfig = {
     chunks: [
-      '开始讲解代码：\n```js\n',
+      '下面我们一步一步来讲解这段代码的实现思路。\n\n',
+
+      '首先来看函数的定义部分：\n',
+      '```js\n',
       'function sum(a, b) {\n',
       '  return a + b;\n',
       '}\n',
-      '```\n\n这是一个简单的加法函数。'
+      '```\n\n',
+
+      '这个函数非常简单，接收两个参数 `a` 和 `b`，并返回它们的和。\n\n',
+
+      '接下来我们思考一下几个关键点：\n\n',
+      '- 这是一个**纯函数**，不会产生副作用\n',
+      '- 对于相同的输入，始终会得到相同的输出\n',
+      '- 非常适合做单元测试\n\n',
+
+      '下面我们来写一个最基础的测试用例：\n',
+      '```js\n',
+      'console.log(sum(1, 2)); // 3\n',
+      'console.log(sum(-1, 5)); // 4\n',
+      '```\n\n',
+
+      '如果我们想对参数做类型校验，可以稍微增强一下实现：\n',
+      '```js\n',
+      'function sum(a, b) {\n',
+      '  if (typeof a !== "number" || typeof b !== "number") {\n',
+      '    throw new TypeError("参数必须是数字");\n',
+      '  }\n',
+      '  return a + b;\n',
+      '}\n',
+      '```\n\n',
+
+      '这样一来，当传入非法参数时，就可以更早地发现问题。\n\n',
+
+      '总结一下：\n',
+      '- 基础实现关注「功能是否正确」\n',
+      '- 增强实现关注「边界与健壮性」\n',
+      '- 在真实项目中，应根据业务复杂度选择合适的实现方式\n\n',
+
+      '本次代码讲解到这里就结束了 ✅'
     ],
     interval: 80
   };
